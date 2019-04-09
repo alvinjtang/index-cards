@@ -1,0 +1,22 @@
+#!/usr/bin/env bash
+
+set -e
+
+function cleanup_at_exit {
+  rm tmp.pem
+}
+
+trap cleanup_at_exit EXIT
+
+export REPO=$(git remote get-url origin | \
+    sed 's/^.*[\/:]\([^\/:]*\)\/\([^\/]*\)$/\1\/\2/' | \
+    sed 's/^\(.*\)\.git$/\1/'
+)
+
+export TRAVIS_KEY=$(curl --silent https://api.travis-ci.org/repos/$REPO/key)
+
+node -e "console.log($TRAVIS_KEY['key'])" > tmp.pem
+
+echo -n $(heroku auth:token) | \
+    openssl rsautl -encrypt -pubin -inkey tmp.pem | \
+    base64 | awk '{print "    secure: "$1}'
