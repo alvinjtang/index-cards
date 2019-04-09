@@ -3,6 +3,9 @@
   "extends": ["airbnb", "prettier", "prettier/react"],
   "plugins": ["prettier"],
   "rules": {
-    "prettier/prettier": ["error"]
+    "prettier/prettier": ["error"],
+    "no-undef": 0,
+    "global-require": 0,
+    "no-console": 0
   }
 }
