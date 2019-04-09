@@ -78,7 +78,7 @@ const initApp = () => {
   });
 
   // error handling endware
-  app.use((err, req, res, next) => {
+  app.use((err, req, res) => {
     console.error(err);
     console.log(err.stack);
     res.status(err.status || 500).send(err.message || 'Internal server error.');
