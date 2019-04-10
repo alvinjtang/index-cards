@@ -16,19 +16,6 @@ router.get('/', async (req, res, next) => {
   }
 });
 
-router.get('/:collectionId', async (req, res, next) => {
-  try {
-    const cards = await Card.findAll({
-      where: {
-        collectionId: req.params.collectionId
-      }
-    });
-    res.json(cards);
-  } catch (err) {
-    next(err);
-  }
-});
-
 router.post('/:collectionId', async (req, res, next) => {
   try {
     const newCard = Card.create(req.body);
@@ -39,11 +26,11 @@ router.post('/:collectionId', async (req, res, next) => {
   }
 });
 
-router.put('/:collectionId', async (req, res, next) => {
+router.put('/:cardId', async (req, res, next) => {
   try {
     const [numOfCards, updatedCard] = Card.update(req.body, {
       where: {
-        id: req.body.id
+        id: req.params.cardId
       },
       returning: true,
       plain: true
@@ -54,11 +41,11 @@ router.put('/:collectionId', async (req, res, next) => {
   }
 });
 
-router.delete('/:collectionId', async (req, res, next) => {
+router.delete('/:cardId', async (req, res, next) => {
   try {
     Card.destroy({
       where: {
-        id: req.body.id
+        id: req.params.cardId
       }
     });
     Collection.removeCard();
