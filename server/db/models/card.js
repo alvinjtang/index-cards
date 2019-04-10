@@ -9,9 +9,6 @@ const Card = db.define('card', {
   back: {
     type: Sequelize.STRING,
     allowNull: false
-  },
-  tags: {
-    type: Sequelize.ARRAY(Sequelize.STRING)
   }
 });
 

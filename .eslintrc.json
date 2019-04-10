@@ -4,8 +4,10 @@
   "plugins": ["prettier"],
   "rules": {
     "prettier/prettier": ["error"],
-    "no-undef": 0,
-    "global-require": 0,
-    "no-console": 0
+    "no-undef": 1,
+    "global-require": 1,
+    "no-console": 1,
+    "no-params-reassign": 1,
+    "no-unused-vars": 1
   }
 }

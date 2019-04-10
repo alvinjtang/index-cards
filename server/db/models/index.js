@@ -5,8 +5,8 @@ const User = require('./user');
 User.hasMany(Collection);
 Collection.belongsTo(User);
 
-Collection.belongsToMany(Card, { through: 'topic' });
-Card.belongsToMany(Collection, { through: 'topic' });
+Collection.hasMany(Card);
+Card.belongsTo(Collection);
 
 User.hasMany(Card);
 Card.belongsTo(User);
