@@ -1,13 +1,7 @@
 {
   "root": true,
-  "extends": ["airbnb", "prettier", "prettier/react"],
-  "plugins": ["prettier"],
+  "extends": ["fullstack", "prettier", "prettier/react"],
   "rules": {
-    "prettier/prettier": ["error"],
-    "no-undef": 1,
-    "global-require": 1,
-    "no-console": 1,
-    "no-params-reassign": 1,
-    "no-unused-vars": 1
+    "semi": 0
   }
 }

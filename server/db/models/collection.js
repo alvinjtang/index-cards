@@ -16,4 +16,12 @@ const Collection = db.define('collection', {
   }
 });
 
+Collection.prototype.addCard = () => {
+  this.cardQty += 1;
+};
+
+Collection.prototype.removeCard = () => {
+  this.cardQty -= 1;
+};
+
 module.exports = Collection;

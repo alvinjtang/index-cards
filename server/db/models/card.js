@@ -9,6 +9,10 @@ const Card = db.define('card', {
   back: {
     type: Sequelize.STRING,
     allowNull: false
+  },
+  collectionId: {
+    type: Sequelize.INTEGER,
+    allowNull: false
   }
 });
 

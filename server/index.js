@@ -59,7 +59,7 @@ const initApp = () => {
 
   // api and auth routes
   app.use('/api', require('./api'));
-  app.use('/auth', require('./auth'));
+  // app.use('/auth', require('./auth'));
 
   // any remaining requests with an extension (.js, .css, etc.) send 404
   app.use((req, res, next) => {
@@ -88,7 +88,7 @@ const initApp = () => {
 // runs server on port
 const listen = () => {
   app.listen(PORT, () => {
-    console.log(chalk.magenta(`***** Shuffling on port ${PORT}! *****`));
+    console.log(chalk.blue(`***** Shuffling on port ${PORT}! *****`));
   });
 };
 

@@ -5,22 +5,8 @@ module.exports = router;
 
 router.get('/', async (req, res, next) => {
   try {
-    const cards = await Card.findAll({
-      where: {
-        userId: req.user.id
-      }
-    });
+    const cards = await Card.findAll();
     res.json(cards);
-  } catch (err) {
-    next(err);
-  }
-});
-
-router.post('/:collectionId', async (req, res, next) => {
-  try {
-    const newCard = Card.create(req.body);
-    Collection.addCard();
-    res.json(newCard);
   } catch (err) {
     next(err);
   }
@@ -28,7 +14,7 @@ router.post('/:collectionId', async (req, res, next) => {
 
 router.put('/:cardId', async (req, res, next) => {
   try {
-    const [numOfCards, updatedCard] = Card.update(req.body, {
+    const [numOfCards, updatedCard] = await Card.update(req.body, {
       where: {
         id: req.params.cardId
       },
@@ -43,7 +29,7 @@ router.put('/:cardId', async (req, res, next) => {
 
 router.delete('/:cardId', async (req, res, next) => {
   try {
-    Card.destroy({
+    await Card.destroy({
       where: {
         id: req.params.cardId
       }
