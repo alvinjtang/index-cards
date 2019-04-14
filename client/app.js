@@ -1,5 +1,5 @@
 import React from 'react';
-import { Routes, Navbar } from './components';
+import { Routes, Navbar } from './containers';
 
 const App = () => {
   return (

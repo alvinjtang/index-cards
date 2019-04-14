@@ -88,7 +88,7 @@ const initApp = () => {
 // runs server on port
 const listen = () => {
   app.listen(PORT, () => {
-    console.log(chalk.blue(`***** Shuffling on port ${PORT}! *****`));
+    console.log(chalk.magenta(`***** Shuffling on port ${PORT}! *****`));
   });
 };
 

@@ -1,4 +1,9 @@
-import { gotCollections, gotCollection, removedCollection } from '../actions/creators/collections';
+import {
+  gotCollections,
+  gotCollection,
+  gotCollectionCards,
+  removedCollection
+} from '../actions/creators/collections';
 import axios from 'axios';
 
 export const getCollections = () => async dispatch => {
@@ -19,7 +24,16 @@ export const getCollection = collectionId => async dispatch => {
   }
 };
 
-export const updateCollection = updatedCollection => async dispatch => {
+export const getCollectionCards = collectionId => async dispatch => {
+  try {
+    const { data } = await axios.get(`/api/collections/${collectionId}/cards`);
+    dispatch(gotCollectionCards(data));
+  } catch (err) {
+    console.error(err);
+  }
+};
+
+export const updateCollection = (collectionId, updatedCollection) => async dispatch => {
   try {
     await axios.put(`/api/users/${collectionId}`, updatedCollection);
     dispatch(gotCollection(updatedCollection));
@@ -39,7 +53,8 @@ export const removeCollection = collectionId => async dispatch => {
 
 const initialState = {
   allCollections: [],
-  currentCollection: {}
+  currentCollection: {},
+  currentCollectionCards: []
 };
 
 export default (state = initialState, action) => {
@@ -48,6 +63,8 @@ export default (state = initialState, action) => {
       return { ...state, allCollections: action.collections };
     case gotCollection().type:
       return { ...state, currentCollection: action.collection };
+    case gotCollectionCards().type:
+      return { ...state, currentCollectionCards: action.cards };
     case removedCollection().type:
       return {
         ...state,

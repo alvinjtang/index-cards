@@ -19,7 +19,7 @@ export const getCard = cardId => async dispatch => {
   }
 };
 
-export const updateCard = updatedCard => async dispatch => {
+export const updateCard = (cardId, updatedCard) => async dispatch => {
   try {
     await axios.put(`/api/users/${cardId}`, updatedCard);
     dispatch(gotCard(updatedCard));

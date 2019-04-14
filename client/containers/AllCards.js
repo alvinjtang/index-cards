@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { getCards } from '../store/reducers/cardsReducer';
+import { IndexCard } from '../components';
 
 class AllCards extends Component {
   componentDidMount() {
@@ -9,25 +10,10 @@ class AllCards extends Component {
   render() {
     const { cards } = this.props;
     return (
-      <div>
-        <table>
-          <thead>
-            <tr>
-              <th>FRONT</th>
-              <th>BACK</th>
-            </tr>
-          </thead>
-          <tbody>
-            {cards.map(card => {
-              return (
-                <tr key={card.id}>
-                  <td>{card.front}</td>
-                  <td>{card.back}</td>
-                </tr>
-              );
-            })}
-          </tbody>
-        </table>
+      <div className='card-grid'>
+        {cards.map(card => {
+          return <IndexCard key={card.id} front={card.front} back={card.back} />;
+        })}
       </div>
     );
   }

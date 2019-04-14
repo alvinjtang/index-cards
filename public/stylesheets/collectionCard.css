@@ -1,0 +1,18 @@
+.collection-card {
+  width: 400px;
+  max-width: 90%;
+  height: 250px;
+  background-color: #fff;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 5%;
+}
+
+.collection-card:hover {
+  width: 420px;
+  height: 270px;
+  transition: all linear 0.1s;
+}

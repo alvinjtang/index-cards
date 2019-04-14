@@ -1,4 +1,9 @@
-import { GET_COLLECTIONS, GET_COLLECTION, REMOVE_COLLECTION } from '../types/collections';
+import {
+  GET_COLLECTIONS,
+  GET_COLLECTION,
+  GET_COLLECTION_CARDS,
+  REMOVE_COLLECTION
+} from '../types/collections';
 
 const gotCollections = collections => ({
   type: GET_COLLECTIONS,
@@ -10,9 +15,14 @@ const gotCollection = collection => ({
   collection
 });
 
+const gotCollectionCards = cards => ({
+  type: GET_COLLECTION_CARDS,
+  cards
+});
+
 const removedCollection = collectionId => ({
   type: REMOVE_COLLECTION,
   collectionId
 });
 
-export { gotCollections, gotCollection, removedCollection };
+export { gotCollections, gotCollection, gotCollectionCards, removedCollection };
