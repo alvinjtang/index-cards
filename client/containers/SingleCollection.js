@@ -1,10 +1,19 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { getCollectionCards } from '../store/reducers/collectionsReducer';
-import { IndexCard } from '../components/index';
+import { IndexCard } from '../components';
+import { NewCard } from '../containers';
 
 class SingleCollection extends Component {
+  constructor() {
+    super();
+    this.refresh = this.refresh.bind(this);
+  }
   componentDidMount() {
+    this.props.getCollectionCards(this.props.match.params.collectionId);
+  }
+
+  refresh() {
     this.props.getCollectionCards(this.props.match.params.collectionId);
   }
 
@@ -15,6 +24,7 @@ class SingleCollection extends Component {
         {cards.map(card => {
           return <IndexCard key={card.id} front={card.front} back={card.back} />;
         })}
+        <NewCard id={this.props.match.params.collectionId} refresh={this.refresh} />
       </div>
     );
   }

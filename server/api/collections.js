@@ -47,12 +47,12 @@ router.get('/:collectionId/cards', async (req, res, next) => {
   }
 });
 
-router.post('/:collectionId', async (req, res, next) => {
+router.post('/:collectionId/cards', async (req, res, next) => {
   try {
     const { front, back } = req.body;
     const { collectionId } = req.params;
     const newCard = await Card.create({ front, back, collectionId });
-    Collection.addCard();
+    console.log('%%%%%%%%%%%%%%%', newCard);
     res.json(newCard);
   } catch (err) {
     next(err);

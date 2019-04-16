@@ -1,4 +1,4 @@
-import { GET_CARDS, GET_CARD, REMOVE_CARD } from '../types/cards';
+import { GET_CARDS, GET_CARD, ADD_CARD, REMOVE_CARD } from '../types/cards';
 
 const gotCards = cards => ({
   type: GET_CARDS,
@@ -10,9 +10,14 @@ const gotCard = card => ({
   card
 });
 
+const addedCard = card => ({
+  type: ADD_CARD,
+  card
+});
+
 const removedCard = cardId => ({
   type: REMOVE_CARD,
   cardId
 });
 
-export { gotCards, gotCard, removedCard };
+export { gotCards, gotCard, addedCard, removedCard };

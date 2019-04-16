@@ -1,4 +1,4 @@
-.collection-card {
+.card {
   width: 400px;
   max-width: 90%;
   height: 250px;
@@ -15,4 +15,71 @@
   width: 420px;
   height: 270px;
   transition: all linear 0.1s;
+}
+
+.index-card:hover {
+  box-shadow: 0 0 20px #ffffff;
+  transition: all linear 0.1s;
+}
+
+#new-card {
+  margin: 5%;
+  width: 400px;
+  max-width: 90%;
+  height: 250px;
+  background-color: #fff;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.new-card-input {
+  margin-top: 5%;
+  margin-left: 5%;
+}
+
+.front-input {
+  height: 1.3rem;
+  border-style: none;
+  width: 95%;
+  font-size: 1em;
+}
+
+.front-input:focus {
+  outline: none;
+}
+
+.back-input {
+  border-style: none;
+  width: 95%;
+  height: 7.5rem;
+  font-size: 1em;
+  resize: none;
+}
+
+.back-input:focus {
+  outline: none;
+}
+
+.submit-btn-div {
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 5%;
+}
+
+.submit-btn {
+  padding: 1%;
+  border: none;
+  border-radius: 5px;
+  background-color: #ffb5b5;
+}
+
+.submit-btn:hover {
+  background-color: #ff8c8c;
+}
+
+.submit-btn:focus {
+  outline: none;
+  background-color: #ff4141;
 }

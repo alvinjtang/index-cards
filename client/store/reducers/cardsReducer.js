@@ -1,4 +1,4 @@
-import { gotCards, gotCard, removedCard } from '../actions/creators/cards';
+import { gotCards, gotCard, addedCard, removedCard } from '../actions/creators/cards';
 import axios from 'axios';
 
 export const getCards = () => async dispatch => {
@@ -14,6 +14,15 @@ export const getCard = cardId => async dispatch => {
   try {
     const { data } = await axios.get(`/api/cards/${cardId}`);
     dispatch(gotCard(data));
+  } catch (err) {
+    console.error(err);
+  }
+};
+
+export const addCard = (newCard, collectionId) => async dispatch => {
+  try {
+    const { data } = await axios.post(`/api/collections/${collectionId}/cards`, newCard);
+    dispatch(addedCard(data));
   } catch (err) {
     console.error(err);
   }
@@ -48,6 +57,8 @@ export default (state = initialState, action) => {
       return { ...state, allCards: action.cards };
     case gotCard().type:
       return { ...state, currentCard: action.card };
+    case addedCard().type:
+      return { ...state, allCards: [...state.allCards, action.card] };
     case removedCard().type:
       return {
         ...state,

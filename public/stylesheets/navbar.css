@@ -1,17 +1,20 @@
 nav {
+  position: fixed;
+  width: 100vw;
   height: 8vh;
-  background-color: #ffffff6c;
+  background-color: #6688addc;
   margin-bottom: 5vh;
   display: flex;
   flex-direction: row;
   justify-content: space-around;
   align-items: center;
+  z-index: 2;
 }
 
 .nav-link {
   text-decoration: none;
   text-align: center;
-  font-size: 140%;
+  font-size: 1.5em;
   font-weight: bold;
   color: #fff;
 }

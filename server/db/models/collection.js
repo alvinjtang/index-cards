@@ -17,7 +17,7 @@ const Collection = db.define('collection', {
 });
 
 Collection.prototype.addCard = () => {
-  this.cardQty += 1;
+  console.log('this.cardQty:', this.cardQty);
 };
 
 Collection.prototype.removeCard = () => {
