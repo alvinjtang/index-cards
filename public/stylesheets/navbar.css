@@ -7,3 +7,16 @@ nav {
   justify-content: space-around;
   align-items: center;
 }
+
+.nav-link {
+  text-decoration: none;
+  text-align: center;
+  font-size: 140%;
+  font-weight: bold;
+  color: #fff;
+}
+
+.nav-link:hover {
+  text-shadow: 0 0 10px #fff;
+  transition: 0.2s;
+}

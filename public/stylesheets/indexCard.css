@@ -1,0 +1,11 @@
+.back {
+  position: absolute;
+  opacity: 0;
+  transition: 0.3s;
+}
+
+.front {
+  position: absolute;
+  opacity: 100;
+  transition: 0.3s;
+}
