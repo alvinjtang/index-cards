@@ -9,12 +9,17 @@
   justify-content: center;
   align-items: center;
   margin: 5%;
+  transition: all linear 0.3s;
+}
+
+.collection-card {
+  background-color: #ffffffc0;
+  color: #6688ad;
 }
 
 .collection-card:hover {
-  width: 420px;
-  height: 270px;
-  transition: all linear 0.1s;
+  background-color: #ffffff;
+  color: #000000;
 }
 
 .index-card:hover {
@@ -22,7 +27,7 @@
   transition: all linear 0.1s;
 }
 
-#new-card {
+.new-entry {
   margin: 5%;
   width: 400px;
   max-width: 90%;

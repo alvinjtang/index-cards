@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
-import { addCard } from '../../store/reducers/cardsReducer';
+import { addCollection } from '../../store/reducers/collectionsReducer';
 import { connect } from 'react-redux';
 
-class NewCard extends Component {
+class NewCollection extends Component {
   constructor() {
     super();
     this.state = {
-      front: '',
-      back: ''
+      name: '',
+      description: ''
     };
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -17,51 +17,47 @@ class NewCard extends Component {
   }
   async handleSubmit() {
     event.preventDefault();
-    await this.props.addCard(this.state, this.props.id);
+    await this.props.addCollection(this.state);
     this.props.refresh();
-    this.setState({ front: '', back: '' });
+    this.setState({ name: '', description: '' });
   }
   render() {
-    const { front, back } = this.state;
+    const { name, description } = this.state;
     return (
       <div>
         <div className='new-entry'>
           <form onSubmit={this.handleSubmit}>
             <div className='new-card-input'>
-              <label htmlFor='front'>
-                <strong>Front: </strong>
+              <label htmlFor='name'>
+                <strong>Name: </strong>
               </label>
               <br />
               <input
                 className='front-input'
                 type='text'
-                name='front'
-                value={front}
-                placeholder='Question or Keyword'
+                name='name'
+                value={name}
+                placeholder='Name of collection'
                 onChange={this.handleChange}
                 required
               />
             </div>
             <div className='new-card-input'>
-              <label htmlFor='Back'>
-                <strong>Back: </strong>
+              <label htmlFor='Description'>
+                <strong>Description: </strong>
               </label>
               <br />
               <textarea
                 className='back-input'
-                name='back'
-                value={back}
-                placeholder='Answer or Definition'
+                name='description'
+                value={description}
+                placeholder='Add a description'
                 onChange={this.handleChange}
-                required
               />
             </div>
             <div className='submit-btn-div'>
-              <button
-                className='submit-btn'
-                type='submit'
-                disabled={!this.state.front || !this.state.back}>
-                Create card
+              <button className='submit-btn' type='submit' disabled={!this.state.name}>
+                Create new collection
               </button>
             </div>
           </form>
@@ -72,10 +68,10 @@ class NewCard extends Component {
 }
 
 const mapDispatch = dispatch => ({
-  addCard: (card, collectionId) => dispatch(addCard(card, collectionId))
+  addCollection: collection => dispatch(addCollection(collection))
 });
 
 export default connect(
   null,
   mapDispatch
-)(NewCard);
+)(NewCollection);

@@ -7,8 +7,7 @@ const Collection = db.define('collection', {
     allowNull: false
   },
   description: {
-    type: Sequelize.TEXT,
-    defaultValue: 'Please enter a description of this collection of index cards.'
+    type: Sequelize.TEXT
   },
   cardQty: {
     type: Sequelize.INTEGER,

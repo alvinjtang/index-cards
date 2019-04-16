@@ -1,15 +1,21 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { getCollections } from '../store/reducers/collectionsReducer';
-import { CollectionCard } from '../components/index';
+import { CollectionCard } from '../components';
+import { NewCollection } from '../containers';
 
 class AllCollections extends Component {
   constructor() {
     super();
     this.handleClick = this.handleClick.bind(this);
+    this.refresh = this.refresh.bind(this);
   }
 
   componentDidMount() {
+    this.props.getCollections();
+  }
+
+  refresh() {
     this.props.getCollections();
   }
 
@@ -32,6 +38,7 @@ class AllCollections extends Component {
             />
           );
         })}
+        <NewCollection refresh={this.refresh} />
       </div>
     );
   }

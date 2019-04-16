@@ -2,6 +2,7 @@ import {
   gotCollections,
   gotCollection,
   gotCollectionCards,
+  addedCollection,
   removedCollection
 } from '../actions/creators/collections';
 import axios from 'axios';
@@ -28,6 +29,15 @@ export const getCollectionCards = collectionId => async dispatch => {
   try {
     const { data } = await axios.get(`/api/collections/${collectionId}/cards`);
     dispatch(gotCollectionCards(data));
+  } catch (err) {
+    console.error(err);
+  }
+};
+
+export const addCollection = newCollection => async dispatch => {
+  try {
+    const { data } = await axios.post(`/api/collections`, newCollection);
+    dispatch(addedCollection(data));
   } catch (err) {
     console.error(err);
   }
@@ -65,6 +75,8 @@ export default (state = initialState, action) => {
       return { ...state, currentCollection: action.collection };
     case gotCollectionCards().type:
       return { ...state, currentCollectionCards: action.cards };
+    case addedCollection().type:
+      return { ...state, allCollections: [...state.allCollections, action.collection] };
     case removedCollection().type:
       return {
         ...state,

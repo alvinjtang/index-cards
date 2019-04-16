@@ -17,9 +17,9 @@ nav {
   font-size: 1.5em;
   font-weight: bold;
   color: #fff;
+  transition: all linear 0.2s;
 }
 
 .nav-link:hover {
   text-shadow: 0 0 10px #fff;
-  transition: 0.2s;
 }

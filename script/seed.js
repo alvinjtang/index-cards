@@ -54,32 +54,32 @@ const cards = [
     collectionId: 1
   },
   {
-    front: 'New York City',
-    back: 'New York',
+    front: 'New York',
+    back: 'New York City',
     userId: 2,
     collectionId: 2
   },
   {
-    front: 'Boston',
-    back: 'Massachusetts',
+    front: 'Massachusetts',
+    back: 'Boston',
     userId: 2,
     collectionId: 2
   },
   {
-    front: 'Tallahassee',
-    back: 'Florida',
+    front: 'Florida',
+    back: 'Tallahassee',
     userId: 2,
     collectionId: 2
   },
   {
-    front: 'Dallas',
-    back: 'Texas',
+    front: 'Texas',
+    back: 'Dallas',
     userId: 2,
     collectionId: 2
   },
   {
-    front: 'Sacramento',
-    back: 'California',
+    front: 'California',
+    back: 'Sacramento',
     userId: 2,
     collectionId: 2
   }

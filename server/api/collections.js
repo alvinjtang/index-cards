@@ -52,7 +52,6 @@ router.post('/:collectionId/cards', async (req, res, next) => {
     const { front, back } = req.body;
     const { collectionId } = req.params;
     const newCard = await Card.create({ front, back, collectionId });
-    console.log('%%%%%%%%%%%%%%%', newCard);
     res.json(newCard);
   } catch (err) {
     next(err);
