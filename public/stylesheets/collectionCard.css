@@ -1,3 +1,7 @@
+div.card.index-card {
+  display: flex;
+}
+
 .card {
   width: 400px;
   max-width: 90%;
@@ -9,7 +13,9 @@
   justify-content: center;
   align-items: center;
   margin: 5%;
-  transition: all linear 0.3s;
+  transition: all linear 0.15s;
+  flex-wrap: wrap;
+  word-break: break-all;
 }
 
 .collection-card {
@@ -20,11 +26,6 @@
 .collection-card:hover {
   background-color: #ffffff;
   color: #000000;
-}
-
-.index-card:hover {
-  box-shadow: 0 0 20px #ffffff;
-  transition: all linear 0.1s;
 }
 
 .new-entry {

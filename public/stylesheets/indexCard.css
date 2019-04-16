@@ -1,11 +1,22 @@
-.back {
-  position: absolute;
+p.back {
+  text-align: center;
   opacity: 0;
   transition: 0.3s;
 }
 
 .front {
-  position: absolute;
+  text-align: center;
   opacity: 100;
   transition: 0.3s;
+  padding: 1rem;
+}
+
+p {
+  color: #7a7a7a;
+  font-size: 1.2rem;
+}
+
+.index-card:hover {
+  box-shadow: 0 0 20px #ffffff;
+  transition: all linear 0.1s;
 }

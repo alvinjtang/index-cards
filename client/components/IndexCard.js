@@ -26,8 +26,8 @@ class IndexCard extends Component {
     return (
       <div>
         <div className='card index-card' onClick={this.handleClick}>
-          <h1 className={this.state.show}>{front}</h1>
-          <h2 className={this.state.hide}>{back}</h2>
+          <h2 className='front'>{front}</h2>
+          <p className={this.state.hide}>{back}</p>
         </div>
       </div>
     );
