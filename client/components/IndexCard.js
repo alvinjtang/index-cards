@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import { removeCard } from '../store/reducers/cardsReducer';
+import { connect } from 'react-redux';
 
 class IndexCard extends Component {
   constructor() {
@@ -21,8 +23,12 @@ class IndexCard extends Component {
       this.setState({ hide: 'front' });
     }
   }
+  async handleRemove(id) {
+    await this.props.removeCard(id);
+    this.props.refresh();
+  }
   render() {
-    const { front, back, showRemove } = this.props;
+    const { id, front, back, showRemove } = this.props;
     return (
       <div>
         <div className='card index-card' onClick={this.handleClick}>
@@ -30,7 +36,8 @@ class IndexCard extends Component {
             <button
               type='button'
               disabled={!showRemove}
-              className={showRemove ? 'show' : 'hide-btn'}>
+              className={showRemove ? 'show' : 'hide-btn'}
+              onClick={() => this.handleRemove(id)}>
               Remove
             </button>
           </div>
@@ -42,4 +49,11 @@ class IndexCard extends Component {
   }
 }
 
-export default IndexCard;
+const mapDispatch = dispatch => ({
+  removeCard: id => dispatch(removeCard(id))
+});
+
+export default connect(
+  null,
+  mapDispatch
+)(IndexCard);

@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { Card, Collection } = require('../db/models');
+const { Card } = require('../db/models');
 
 module.exports = router;
 
@@ -34,7 +34,6 @@ router.delete('/:cardId', async (req, res, next) => {
         id: req.params.cardId
       }
     });
-    Collection.removeCard();
     res.status(202).end();
   } catch (err) {
     next(err);

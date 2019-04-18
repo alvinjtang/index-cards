@@ -30,7 +30,7 @@ export const addCard = (newCard, collectionId) => async dispatch => {
 
 export const updateCard = (cardId, updatedCard) => async dispatch => {
   try {
-    await axios.put(`/api/users/${cardId}`, updatedCard);
+    await axios.put(`/api/cards/${cardId}`, updatedCard);
     dispatch(gotCard(updatedCard));
   } catch (err) {
     console.error(err);
@@ -39,7 +39,7 @@ export const updateCard = (cardId, updatedCard) => async dispatch => {
 
 export const removeCard = cardId => async dispatch => {
   try {
-    await axios.delete(`/api/users/${cardId}`);
+    await axios.delete(`/api/cards/${cardId}`);
     dispatch(removedCard(cardId));
   } catch (err) {
     console.error(err);

@@ -55,9 +55,11 @@ class SingleCollection extends Component {
             return (
               <IndexCard
                 key={card.id}
+                id={card.id}
                 front={card.front}
                 back={card.back}
                 showRemove={this.state.showRemove}
+                refresh={this.refresh}
               />
             );
           })}
