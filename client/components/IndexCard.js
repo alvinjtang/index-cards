@@ -27,7 +27,10 @@ class IndexCard extends Component {
       <div>
         <div className='card index-card' onClick={this.handleClick}>
           <div className='remove-btn'>
-            <button type='button' className={showRemove ? 'show' : 'hide-btn'}>
+            <button
+              type='button'
+              disabled={!showRemove}
+              className={showRemove ? 'show' : 'hide-btn'}>
               Remove
             </button>
           </div>

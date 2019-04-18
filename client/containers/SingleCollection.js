@@ -47,7 +47,7 @@ class SingleCollection extends Component {
         </div>
         <div className='card-grid'>
           <NewCard
-            display={this.state.show ? 'show' : 'hide'}
+            display={this.state.show ? 'showCard' : 'hideCard'}
             id={this.props.match.params.collectionId}
             refresh={this.refresh}
           />

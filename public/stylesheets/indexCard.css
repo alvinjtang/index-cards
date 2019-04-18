@@ -22,12 +22,12 @@ p {
   transition: all linear 0.1s;
 }
 
-.hide {
+.hideCard {
   opacity: 0;
   position: absolute;
   z-index: -1;
 }
 
-.show {
+.showCard {
   transition: all linear 0.3s;
 }
