@@ -1,7 +1,3 @@
-div.card.index-card {
-  display: flex;
-}
-
 .card {
   width: 400px;
   max-width: 90%;
@@ -38,6 +34,12 @@ div.card.index-card {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
+  transition: all linear 0.15s;
+}
+
+.new-entry:hover {
+  box-shadow: 0 0 20px #ffffff;
+  transition: all linear 0.1s;
 }
 
 .new-card-input {
@@ -66,26 +68,4 @@ div.card.index-card {
 
 .back-input:focus {
   outline: none;
-}
-
-.submit-btn-div {
-  display: flex;
-  justify-content: flex-end;
-  margin-right: 5%;
-}
-
-.submit-btn {
-  padding: 1%;
-  border: none;
-  border-radius: 5px;
-  background-color: #ffb5b5;
-}
-
-.submit-btn:hover {
-  background-color: #ff8c8c;
-}
-
-.submit-btn:focus {
-  outline: none;
-  background-color: #ff4141;
 }

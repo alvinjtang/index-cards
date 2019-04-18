@@ -1,0 +1,91 @@
+.submit-btn-div {
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 5%;
+}
+
+.submit-btn {
+  padding: 2%;
+  width: 5rem;
+  border: none;
+  border-radius: 5px;
+  background-color: #6688ad33;
+}
+
+.submit-btn:hover {
+  background-color: #6688ad77;
+}
+
+.submit-btn:focus {
+  outline: none;
+  background-color: #6688adab;
+}
+
+.btn-div {
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 4vw;
+}
+
+#add-btn {
+  height: 2.5em;
+  width: 5.5em;
+  border-radius: 8px;
+  font-size: 0.9em;
+  border: none;
+  background-color: #b0f7b4;
+  transition: all linear 0.1s;
+}
+
+#add-btn:hover {
+  color: #fff;
+  background-color: #35bb3b;
+}
+
+#add-btn:focus {
+  outline: none;
+}
+
+#show-remove-btn {
+  height: 2.5em;
+  width: 5.5em;
+  border-radius: 8px;
+  font-size: 0.9em;
+  border: none;
+  background-color: #f7b0b0;
+  transition: all linear 0.1s;
+  margin-right: 15px;
+}
+
+#show-remove-btn:hover {
+  color: #fff;
+  background-color: #bb3535;
+}
+
+#show-remove-btn:focus {
+  outline: none;
+}
+
+.show {
+  height: 2.5em;
+  width: 5.5em;
+  border-radius: 8px;
+  font-size: 0.9em;
+  border: none;
+  background-color: #f7b0b0;
+  transition: all linear 0.1s;
+}
+
+.show:hover {
+  color: #fff;
+  background-color: #bb3535;
+}
+
+.show:focus {
+  outline: none;
+}
+
+.hide-btn {
+  opacity: 0;
+  transition: all linear 0.1s;
+}

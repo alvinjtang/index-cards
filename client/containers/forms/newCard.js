@@ -24,7 +24,7 @@ class NewCard extends Component {
   render() {
     const { front, back } = this.state;
     return (
-      <div>
+      <div className={this.props.display}>
         <div className='new-entry'>
           <form onSubmit={this.handleSubmit}>
             <div className='new-card-input'>
@@ -61,7 +61,7 @@ class NewCard extends Component {
                 className='submit-btn'
                 type='submit'
                 disabled={!this.state.front || !this.state.back}>
-                Create card
+                Create
               </button>
             </div>
           </form>

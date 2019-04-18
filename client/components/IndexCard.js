@@ -22,11 +22,16 @@ class IndexCard extends Component {
     }
   }
   render() {
-    const { front, back } = this.props;
+    const { front, back, showRemove } = this.props;
     return (
       <div>
         <div className='card index-card' onClick={this.handleClick}>
-          <h2 className='front'>{front}</h2>
+          <div className='remove-btn'>
+            <button type='button' className={showRemove ? 'show' : 'hide-btn'}>
+              Remove
+            </button>
+          </div>
+          <h2 className={this.state.show}>{front}</h2>
           <p className={this.state.hide}>{back}</p>
         </div>
       </div>
