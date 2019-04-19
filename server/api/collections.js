@@ -57,3 +57,16 @@ router.post('/:collectionId/cards', async (req, res, next) => {
     next(err);
   }
 });
+
+router.delete('/:collectionId', async (req, res, next) => {
+  try {
+    await Collection.destroy({
+      where: {
+        id: req.params.collectionId
+      }
+    });
+    res.status(202).end();
+  } catch (err) {
+    next(err);
+  }
+});

@@ -45,7 +45,7 @@ export const addCollection = newCollection => async dispatch => {
 
 export const updateCollection = (collectionId, updatedCollection) => async dispatch => {
   try {
-    await axios.put(`/api/users/${collectionId}`, updatedCollection);
+    await axios.put(`/api/collections/${collectionId}`, updatedCollection);
     dispatch(gotCollection(updatedCollection));
   } catch (err) {
     console.error(err);
@@ -54,7 +54,7 @@ export const updateCollection = (collectionId, updatedCollection) => async dispa
 
 export const removeCollection = collectionId => async dispatch => {
   try {
-    await axios.delete(`/api/users/${collectionId}`);
+    await axios.delete(`/api/collections/${collectionId}`);
     dispatch(removedCollection(collectionId));
   } catch (err) {
     console.error(err);

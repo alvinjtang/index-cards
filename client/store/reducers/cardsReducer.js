@@ -62,7 +62,7 @@ export default (state = initialState, action) => {
     case removedCard().type:
       return {
         ...state,
-        allCards: state.allCards.filter(card => card.id !== removedCard.cardId)
+        allCards: state.allCards.filter(card => card.id !== action.cardId)
       };
     default:
       return state;

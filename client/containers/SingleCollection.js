@@ -15,8 +15,11 @@ class SingleCollection extends Component {
     this.handleClick = this.handleClick.bind(this);
     this.handleRemove = this.handleRemove.bind(this);
   }
-  componentDidMount() {
-    this.props.getCollectionCards(this.props.match.params.collectionId);
+  async componentDidMount() {
+    await this.props.getCollectionCards(this.props.match.params.collectionId);
+    if (this.props.cards.length === 0) {
+      this.setState({ show: true });
+    }
   }
 
   handleClick() {
@@ -42,7 +45,7 @@ class SingleCollection extends Component {
             Edit Cards
           </button>
           <button id='add-btn' type='button' onClick={this.handleClick}>
-            {this.state.show ? 'Continue Studying' : 'Add Card'}
+            {this.state.show ? 'Continue' : 'Add Card'}
           </button>
         </div>
         <div className='card-grid'>

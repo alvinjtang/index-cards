@@ -24,7 +24,7 @@ class NewCollection extends Component {
   render() {
     const { name, description } = this.state;
     return (
-      <div>
+      <div className={this.props.display}>
         <div className='new-entry'>
           <form onSubmit={this.handleSubmit}>
             <div className='new-card-input'>
@@ -57,7 +57,7 @@ class NewCollection extends Component {
             </div>
             <div className='submit-btn-div'>
               <button className='submit-btn' type='submit' disabled={!this.state.name}>
-                Create new collection
+                Create
               </button>
             </div>
           </form>

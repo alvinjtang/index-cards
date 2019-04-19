@@ -87,5 +87,6 @@
 
 .hide-btn {
   opacity: 0;
+  height: 1px;
   transition: all linear 0.1s;
 }
