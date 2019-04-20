@@ -42,7 +42,7 @@ class SingleCollection extends Component {
       <div>
         <div className='btn-div'>
           <button id='show-remove-btn' type='button' onClick={this.handleRemove}>
-            Edit Cards
+            {this.state.showRemove ? 'Done' : 'Edit Cards'}
           </button>
           <button id='add-btn' type='button' onClick={this.handleClick}>
             {this.state.show ? 'Continue' : 'Add Card'}

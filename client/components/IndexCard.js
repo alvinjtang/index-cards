@@ -41,7 +41,7 @@ class IndexCard extends Component {
               Remove
             </button>
           </div>
-          <h2 className={this.state.show}>{front}</h2>
+          <h3 className={this.state.show}>{front}</h3>
           <p className={this.state.hide}>{back}</p>
         </div>
       </div>
