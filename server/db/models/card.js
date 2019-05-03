@@ -7,7 +7,7 @@ const Card = db.define('card', {
     allowNull: false
   },
   back: {
-    type: Sequelize.STRING,
+    type: Sequelize.TEXT,
     allowNull: false
   },
   collectionId: {
