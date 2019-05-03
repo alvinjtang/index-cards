@@ -4,13 +4,6 @@ import { getCards } from '../store/reducers/cardsReducer';
 import { IndexCard } from '../components';
 
 class AllCards extends Component {
-  constructor() {
-    super();
-    this.state = {
-      removeBtn: 'show'
-    };
-  }
-
   componentDidMount() {
     this.props.getCards();
   }
