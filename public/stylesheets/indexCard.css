@@ -1,7 +1,6 @@
 .back {
   opacity: 0;
-  transition: 0.3s;
-  font-size: 1px;
+  font-size: 0.1px;
 }
 
 .front {
@@ -14,6 +13,12 @@
 p {
   color: #7a7a7a;
   font-size: 1rem;
+  overflow: auto;
+}
+
+.card .index-card {
+  display: flex;
+  flex-direction: column;
 }
 
 .index-card:hover {
@@ -29,4 +34,21 @@ p {
 
 .showCard {
   transition: all linear 0.3s;
+}
+
+#collection-name {
+  display: flex;
+  justify-content: center;
+  background-color: rgba(255, 255, 255, 0.459);
+  margin-left: 10%;
+  margin-right: 10%;
+  margin-top: 1%;
+  padding: 1%;
+  border-radius: 25px;
+  transition: all linear 0.08s;
+}
+
+#collection-name:hover {
+  box-shadow: 0 0 20px #ffffff;
+  background-color: #fff;
 }

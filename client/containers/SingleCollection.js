@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { getCollectionCards } from '../store/reducers/collectionsReducer';
+import { getCollectionCards, getCollection } from '../store/reducers/collectionsReducer';
 import { IndexCard } from '../components';
 import { NewCard } from '../containers';
 
@@ -17,6 +17,7 @@ class SingleCollection extends Component {
   }
   async componentDidMount() {
     await this.props.getCollectionCards(this.props.match.params.collectionId);
+    await this.props.getCollection(this.props.match.params.collectionId);
     if (this.props.cards.length === 0) {
       this.setState({ show: true });
     }
@@ -37,7 +38,8 @@ class SingleCollection extends Component {
   }
 
   render() {
-    const { cards } = this.props;
+    const { cards, collection } = this.props;
+    console.log(this.props);
     return (
       <div>
         <div className='btn-div'>
@@ -47,6 +49,9 @@ class SingleCollection extends Component {
           <button id='add-btn' type='button' onClick={this.handleClick}>
             {this.state.show ? 'Continue' : 'Add Card'}
           </button>
+        </div>
+        <div id='collection-name'>
+          <h1>{collection.name}</h1>
         </div>
         <div className='card-grid'>
           <NewCard
@@ -73,11 +78,13 @@ class SingleCollection extends Component {
 }
 
 const mapCollection = state => ({
+  collection: state.collections.currentCollection,
   cards: state.collections.currentCollectionCards
 });
 
 const mapDispatch = dispatch => ({
-  getCollectionCards: id => dispatch(getCollectionCards(id))
+  getCollectionCards: id => dispatch(getCollectionCards(id)),
+  getCollection: id => dispatch(getCollection(id))
 });
 
 export default connect(
