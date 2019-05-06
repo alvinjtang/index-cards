@@ -32,17 +32,17 @@ class IndexCard extends Component {
     return (
       <div>
         <div className='card index-card' onClick={this.handleClick}>
-          <div className='remove-btn'>
-            <button
-              type='button'
-              disabled={!showRemove}
-              className={showRemove ? 'show' : 'hide-btn'}
-              onClick={() => this.handleRemove(id)}>
-              Remove
-            </button>
-          </div>
           <h3 className={this.state.show}>{front}</h3>
           <p className={this.state.hide}>{back}</p>
+        </div>
+        <div className='remove-btn'>
+          <button
+            type='button'
+            disabled={!showRemove}
+            className={showRemove ? 'show' : 'hide-btn'}
+            onClick={() => this.handleRemove(id)}>
+            Remove
+          </button>
         </div>
       </div>
     );

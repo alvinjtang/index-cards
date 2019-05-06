@@ -18,7 +18,7 @@ export const getCollections = () => async dispatch => {
 
 export const getCollection = collectionId => async dispatch => {
   try {
-    const { data } = await axios.get(`/api/collection/${collectionId}`);
+    const { data } = await axios.get(`/api/collections/${collectionId}`);
     dispatch(gotCollection(data));
   } catch (err) {
     console.error(err);
