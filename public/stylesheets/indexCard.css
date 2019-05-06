@@ -6,7 +6,7 @@
 .front {
   text-align: center;
   opacity: 100;
-  transition: 0.3s;
+  transition: 0.2s;
   padding: 1rem;
 }
 
@@ -44,7 +44,7 @@ p {
   margin-right: 10%;
   margin-top: 1%;
   padding: 1%;
-  border-radius: 25px;
+  border-radius: 20px;
   transition: all linear 0.08s;
 }
 
