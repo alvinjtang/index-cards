@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { getCollectionCards } from '../store/reducers/collectionsReducer';
 import { IndexCard } from '../components';
-import { NewCard } from '../containers';
+import { NewCard, UpdateCard } from '../containers';
 
 class SingleCollection extends Component {
   constructor() {
@@ -55,7 +55,16 @@ class SingleCollection extends Component {
             refresh={this.refresh}
           />
           {cards.map(card => {
-            return (
+            return this.state.showRemove ? (
+              <UpdateCard
+                key={card.id}
+                id={card.id}
+                front={card.front}
+                back={card.back}
+                showRemove={this.state.showRemove}
+                refresh={this.refresh}
+              />
+            ) : (
               <IndexCard
                 key={card.id}
                 id={card.id}

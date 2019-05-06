@@ -6,15 +6,17 @@ class UpdateCard extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      front: '',
-      back: ''
+      front: props.front,
+      back: props.back
     };
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
+
   async handleChange(event) {
     await this.setState({ [event.target.name]: event.target.value });
   }
+
   async handleSubmit() {
     event.preventDefault();
     await this.props.addCard(this.state, this.props.id);
@@ -23,6 +25,7 @@ class UpdateCard extends Component {
   }
   render() {
     const { front, back } = this.state;
+    const { showRemove } = this.props;
     return (
       <div className={this.props.display}>
         <div className='new-entry'>
@@ -37,7 +40,6 @@ class UpdateCard extends Component {
                 type='text'
                 name='front'
                 value={front}
-                placeholder='Question or Keyword'
                 onChange={this.handleChange}
                 required
               />
@@ -51,17 +53,23 @@ class UpdateCard extends Component {
                 className='back-input'
                 name='back'
                 value={back}
-                placeholder='Answer or Definition'
                 onChange={this.handleChange}
                 required
               />
             </div>
             <div className='submit-btn-div'>
               <button
+                type='button'
+                disabled={!showRemove}
+                className={showRemove ? 'show' : 'hide-btn'}
+                onClick={() => this.handleRemove(id)}>
+                Remove
+              </button>
+              <button
                 className='submit-btn'
                 type='submit'
                 disabled={!this.state.front || !this.state.back}>
-                Create
+                Update
               </button>
             </div>
           </form>
