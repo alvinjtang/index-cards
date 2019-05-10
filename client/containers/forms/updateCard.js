@@ -23,6 +23,7 @@ class UpdateCard extends Component {
     this.props.refresh();
     this.setState({ front: '', back: '' });
   }
+
   render() {
     const { front, back } = this.state;
     const { showRemove } = this.props;

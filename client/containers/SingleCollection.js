@@ -2,19 +2,21 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { getCollectionCards, getCollection } from '../store/reducers/collectionsReducer';
 import { IndexCard } from '../components';
-import { NewCard, UpdateCard } from '../containers';
+import { NewCard } from '../containers';
 
 class SingleCollection extends Component {
   constructor() {
     super();
     this.state = {
       show: false,
-      showRemove: false
+      showRemove: false,
+      showUpdate: false
     };
     this.refresh = this.refresh.bind(this);
     this.handleClick = this.handleClick.bind(this);
     this.handleRemove = this.handleRemove.bind(this);
   }
+
   async componentDidMount() {
     await this.props.getCollectionCards(this.props.match.params.collectionId);
     await this.props.getCollection(this.props.match.params.collectionId);
@@ -29,8 +31,8 @@ class SingleCollection extends Component {
   }
 
   handleRemove() {
-    const { showRemove } = this.state;
-    this.setState({ showRemove: !showRemove });
+    const { showRemove, showUpdate } = this.state;
+    this.setState({ showRemove: !showRemove, showUpdate: !showUpdate });
   }
 
   refresh() {
@@ -39,7 +41,6 @@ class SingleCollection extends Component {
 
   render() {
     const { cards, collection } = this.props;
-    console.log(this.props);
     return (
       <div>
         <div className='btn-div'>
@@ -60,16 +61,7 @@ class SingleCollection extends Component {
             refresh={this.refresh}
           />
           {cards.map(card => {
-            return this.state.showRemove ? (
-              <UpdateCard
-                key={card.id}
-                id={card.id}
-                front={card.front}
-                back={card.back}
-                showRemove={this.state.showRemove}
-                refresh={this.refresh}
-              />
-            ) : (
+            return (
               <IndexCard
                 key={card.id}
                 id={card.id}
