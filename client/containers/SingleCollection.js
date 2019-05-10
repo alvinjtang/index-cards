@@ -9,12 +9,14 @@ class SingleCollection extends Component {
     super();
     this.state = {
       show: false,
-      showRemove: false
+      showRemove: false,
+      showUpdate: false
     };
     this.refresh = this.refresh.bind(this);
     this.handleClick = this.handleClick.bind(this);
     this.handleRemove = this.handleRemove.bind(this);
   }
+
   async componentDidMount() {
     await this.props.getCollectionCards(this.props.match.params.collectionId);
     await this.props.getCollection(this.props.match.params.collectionId);
@@ -29,8 +31,8 @@ class SingleCollection extends Component {
   }
 
   handleRemove() {
-    const { showRemove } = this.state;
-    this.setState({ showRemove: !showRemove });
+    const { showRemove, showUpdate } = this.state;
+    this.setState({ showRemove: !showRemove, showUpdate: !showUpdate });
   }
 
   refresh() {
@@ -39,7 +41,6 @@ class SingleCollection extends Component {
 
   render() {
     const { cards, collection } = this.props;
-    console.log(this.props);
     return (
       <div>
         <div className='btn-div'>
