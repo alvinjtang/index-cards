@@ -5,9 +5,9 @@ const { User, Collection, Card } = require('../server/db/models');
 const users = [
   {
     id: 1,
-    email: 'admin@test.com',
+    email: 'cody@email.com',
     isAdmin: true,
-    password: 'pandaexpress'
+    password: 'mcdonalds'
   },
   {
     id: 2,

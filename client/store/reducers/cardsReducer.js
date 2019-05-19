@@ -31,7 +31,7 @@ export const addCard = (newCard, collectionId) => async dispatch => {
 export const updateCard = (cardId, updatedCard) => async dispatch => {
   try {
     await axios.put(`/api/cards/${cardId}`, updatedCard);
-    dispatch(gotCard(updatedCard));
+    dispatch(gotCards(updatedCard));
   } catch (err) {
     console.error(err);
   }
@@ -58,7 +58,7 @@ export default (state = initialState, action) => {
     case gotCard().type:
       return { ...state, currentCard: action.card };
     case addedCard().type:
-      return { ...state, allCards: [...state.allCards, action.card] };
+      return { ...state, allCards: [action.card, ...state.allCards] };
     case removedCard().type:
       return {
         ...state,
