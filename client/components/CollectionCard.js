@@ -33,13 +33,19 @@ class CollectionCard extends Component {
     return (
       <div>
         <div
-          className='card collection-card'
+          className='card flip-card'
           onMouseOver={this.transition}
           onMouseOut={this.transition}
           onClick={() => handleClick(id)}>
           <div className='remove-btn' />
-          <h1 className={this.state.show}>{name}</h1>
-          <p className={this.state.hide}>{description}</p>
+          <div className={`flip-card-inner flip-${this.state.show}`}>
+            <div className="flip-card-front">
+              <h1 className={this.state.show}>{name}</h1>
+            </div>
+            <div className="flip-card-back">
+              <p className={this.state.hide}>{description}</p>
+            </div>
+          </div>
         </div>
         <button
           type='button'
