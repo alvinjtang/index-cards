@@ -126,14 +126,14 @@ class IndexCard extends Component {
               <button
                 type='button'
                 disabled={!showRemove}
-                className={showRemove ? 'show' : 'hide-btn'}
+                className={showRemove ? 'show rm-card-btn' : 'hide-btn rm-card-btn'}
                 onClick={() => this.handleRemove(id)}>
                 Remove
               </button>
               <button
                 type='button'
                 disabled={!showRemove}
-                className={showRemove ? 'show' : 'hide-btn'}
+                className={showRemove ? 'show rm-card-btn' : 'hide-btn rm-card-btn'}
                 onClick={this.toggleUpdateForm}>
                 Update
               </button>

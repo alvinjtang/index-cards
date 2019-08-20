@@ -70,3 +70,8 @@ p {
   box-shadow: 0 0 20px #ffffff;
   background-color: #fff;
 }
+
+.rm-card-btn {
+  margin-top: -15px;
+  margin-left: 20px;
+}

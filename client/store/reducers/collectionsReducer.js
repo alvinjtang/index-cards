@@ -74,7 +74,7 @@ export default (state = initialState, action) => {
     case gotCollection().type:
       return { ...state, currentCollection: action.collection };
     case gotCollectionCards().type:
-      return { ...state, currentCollectionCards: action.cards };
+      return { ...state, currentCollectionCards: action.cards.sort((a,b) => b.id - a.id) };
     case addedCollection().type:
       return { ...state, allCollections: [...state.allCollections, action.collection] };
     case removedCollection().type:
