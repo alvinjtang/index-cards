@@ -10,7 +10,7 @@ class IndexCard extends Component {
       hide: 'back',
       front: props.front,
       back: props.back,
-      showForm: false
+      showForm: false,
     };
     this.handleClick = this.handleClick.bind(this);
     this.handleChange = this.handleChange.bind(this);
@@ -110,9 +110,15 @@ class IndexCard extends Component {
       </div>
     ) : (
       <div>
-        <div className='card index-card' onClick={this.handleClick}>
-          <h3 className={this.state.show}>{front}</h3>
-          <p className={this.state.hide}>{back}</p>
+        <div className='card index-card flip-card' onClick={this.handleClick}>
+          <div className={`flip-card-inner flip-${this.state.show}`}>
+            <div className="flip-card-front">
+              <h3>{front}</h3>
+            </div>
+            <div className="flip-card-back">
+              <p>{back}</p>
+            </div>
+          </div>
         </div>
         <div className='remove-btn'>
           {showRemove ? (
