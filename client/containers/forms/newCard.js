@@ -31,7 +31,6 @@ class NewCard extends Component {
               <label htmlFor='front'>
                 <strong>Front: </strong>
               </label>
-              <br />
               <input
                 className='front-input'
                 type='text'

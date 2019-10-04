@@ -30,9 +30,9 @@ h3 {
 
 .new-entry {
   margin: 5%;
-  width: 400px;
+  width: 380px;
   max-width: 90%;
-  height: 250px;
+  height: 240px;
   background-color: #fff;
   border-radius: 20px;
   display: flex;
@@ -65,7 +65,7 @@ h3 {
 .back-input {
   border-style: none;
   width: 95%;
-  height: 7.5rem;
+  height: 6.5rem;
   font-size: 1em;
   resize: none;
 }
