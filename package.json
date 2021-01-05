@@ -42,7 +42,7 @@
   "dependencies": {
     "@material-ui/core": "^3.9.3",
     "@material-ui/icons": "^3.0.2",
-    "axios": "^0.18.0",
+    "axios": "^0.21.1",
     "chalk": "^2.4.2",
     "compression": "^1.7.4",
     "connect-session-sequelize": "^6.0.0",
